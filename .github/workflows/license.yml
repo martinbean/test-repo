@@ -1,0 +1,17 @@
+name: Update license
+
+on:
+  schedule:
+    - cron: '0 2 1 1 *'
+  workflow_dispatch:
+
+jobs:
+  create_issue:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Create issue
+        run: |
+          gh issue create \
+            --assignee martinbean \
+            --title "Update year in LICENSE.md to $(shell date +%Y)"
