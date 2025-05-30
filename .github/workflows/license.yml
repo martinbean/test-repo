@@ -15,6 +15,7 @@ jobs:
         run: |
           gh issue create \
             --assignee martinbean \
-            --title "Update year in LICENSE.md to $(shell date +%Y)"
+            --body "Update year in LICENSE.md to $(shell date +%Y)" \
+            --title "Update license"
         env:
           GH_TOKEN: ${{ github.token }}
