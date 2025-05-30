@@ -7,6 +7,7 @@ on:
 
 jobs:
   create_issue:
+    name: Create issue
     runs-on: ubuntu-latest
 
     steps:
@@ -15,3 +16,5 @@ jobs:
           gh issue create \
             --assignee martinbean \
             --title "Update year in LICENSE.md to $(shell date +%Y)"
+        env:
+          GH_TOKEN: ${{ github.token }}
